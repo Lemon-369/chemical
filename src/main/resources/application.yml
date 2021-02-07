@@ -1,0 +1,10 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /chemicals  #设置项目访问路径
+
+spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+
