@@ -8,3 +8,6 @@ spring:
     restart:
       enabled: true  #设置开启热部署
 
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true  #解决数据库字段带下划线字段自动转换驼峰命名
