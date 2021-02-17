@@ -7,7 +7,17 @@ spring:
   devtools:
     restart:
       enabled: true  #设置开启热部署
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project?serverTimezone=UTC
+    username: root
+    password: root
 
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true  #解决数据库字段带下划线字段自动转换驼峰命名
+
+person:
+  username: 张三
+  age: 18
+  sex: 男
