@@ -1,10 +1,10 @@
 package com.hy.chemical.service;
 
-import com.hy.chemical.pojo.Users;
+import com.hy.chemical.pojo.User;
 
 import java.util.List;
 
 public interface UserService {
-    public Users query(int id);
-    public List<Users> queryAll();
+    public User query(int id);
+    public List<User> queryAll();
 }
