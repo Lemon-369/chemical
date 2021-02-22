@@ -18,7 +18,7 @@ import java.io.Serializable;
 //全部参数的构造函数的自动生成，该注解的作用域也是只有在实体类上，参数的顺序与属性定义的顺序一致。
 @NoArgsConstructor  //无参构造函数
 @TableName(value = "users")
-public class Users implements Serializable {
+public class User implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer uid;    //id
     private String userName;    //账号
