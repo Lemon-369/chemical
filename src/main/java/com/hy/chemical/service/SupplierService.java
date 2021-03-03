@@ -18,5 +18,5 @@ public interface SupplierService {
      */
     List<Supplier> queryAll();
 
-    IPage<Supplier> selectPage(int page, int pageSize, SupplierSelectVo selectVo);
+    IPage<Supplier> mySelectPage(int page, int pageSize, SupplierSelectVo selectVo);
 }

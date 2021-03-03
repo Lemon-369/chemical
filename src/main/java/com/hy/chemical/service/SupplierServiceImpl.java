@@ -8,6 +8,7 @@ import com.hy.chemical.pojo.Supplier;
 import com.hy.chemical.vo.SupplierSelectVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -24,16 +25,19 @@ public class SupplierServiceImpl implements SupplierService{
         return mapper.selectList(null);
     }
 
+    /**
+     * @param page
+     * @param pageSize
+     * @param selectVo
+     * @return
+     */
     @Override
-    public IPage<Supplier> selectPage(int page, int pageSize, SupplierSelectVo selectVo) {
+    public IPage<Supplier> mySelectPage(int page, int pageSize, SupplierSelectVo selectVo) {
+        //创建分页对象
         Page<Supplier> pages = new Page<>(page, pageSize);
+        //设置 返回数据总记录
         pages.setSearchCount(true);
-        if (selectVo.equals("") && selectVo !=null){
-            QueryWrapper<Supplier> wrapper = new QueryWrapper<>();
-            wrapper.eq("name",selectVo.getName());
-            wrapper.eq("userId",selectVo.getUserId());
-            return mapper.selectPage(pages, wrapper);
-        }
-        return mapper.selectPage(pages,null);
+        return mapper.mySelectPage(pages,selectVo);
+
     }
 }
