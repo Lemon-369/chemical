@@ -7,7 +7,7 @@
         <id property="gid" column="gid"/>
     </resultMap>
     <select id="mySelectPage" parameterType="SupplierSelectVo" resultType="supplier">
-        <if test="condition.name!=null">
+        <if test="condition.name!=null and condition.name!=''">
             <bind name="Name" value="'%'+condition.name+'%'"></bind>
         </if>
       select * from supplier
@@ -15,7 +15,7 @@
           <if test="condition.name !=null and condition.name!=''">
               and name like #{Name}
           </if>
-          <if test="condition.userId !=null and condition.userId != 0">
+          <if test="condition.userId !=null and condition.userId != ''">
           and user_id = #{condition.userId}
       </if>
       </where>

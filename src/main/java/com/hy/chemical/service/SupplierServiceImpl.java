@@ -1,14 +1,13 @@
 package com.hy.chemical.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hy.chemical.mapper.SupplierMapper;
 import com.hy.chemical.pojo.Supplier;
+import com.hy.chemical.pojo.User;
 import com.hy.chemical.vo.SupplierSelectVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -20,12 +19,9 @@ import java.util.List;
 public class SupplierServiceImpl implements SupplierService{
     @Autowired
     private SupplierMapper mapper;
-    @Override
-    public List<Supplier> queryAll() {
-        return mapper.selectList(null);
-    }
 
     /**
+     * 查询所有供应商信息
      * @param page
      * @param pageSize
      * @param selectVo
@@ -39,5 +35,35 @@ public class SupplierServiceImpl implements SupplierService{
         pages.setSearchCount(true);
         return mapper.mySelectPage(pages,selectVo);
 
+    }
+
+    /**
+     * 添加供应商信息
+     * @param supplier
+     * @return
+     */
+    @Override
+    public int insert(Supplier supplier) {
+        return mapper.insert(supplier);
+    }
+
+    /**
+     * 根据id删除供应商信息
+     * @param id
+     * @return
+     */
+    @Override
+    public int deleteById(int id) {
+        return mapper.deleteById(id);
+    }
+
+    /**
+     * 更新供应商信息
+     * @param supplier
+     * @return
+     */
+    @Override
+    public int updateById(Supplier supplier) {
+        return mapper.updateById(supplier);
     }
 }

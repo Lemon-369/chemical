@@ -1,8 +1,10 @@
 package com.hy.chemical.vo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 /**
  * @author zhang
@@ -13,5 +15,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SupplierSelectVo {
     private String name;    //供应商名称
-    private int userId; //业务员id
+    private String userId; //业务员id
 }

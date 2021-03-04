@@ -3,15 +3,13 @@ package com.hy.chemical.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.hy.chemical.pojo.Supplier;
 import com.hy.chemical.pojo.SupplierPage;
+import com.hy.chemical.pojo.User;
 import com.hy.chemical.service.SupplierServiceImpl;
+import com.hy.chemical.service.UserServiceImpl;
 import com.hy.chemical.vo.SupplierSelectVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +23,16 @@ import java.util.List;
 public class SupplierController {
     @Autowired
     private SupplierServiceImpl service;
+    @Autowired
+    private UserServiceImpl userService;
 
+    /**
+     * 模糊分页查询
+     * @param selectVo
+     * @param page
+     * @param pageSize
+     * @return
+     */
     @ResponseBody
     @GetMapping(value = "/query")
     public SupplierPage queryAll(
@@ -47,6 +54,31 @@ public class SupplierController {
         //当前页码
         supplierPage.setCurrent(iPage.getCurrent());
         return supplierPage;
+    }
+
+    @ResponseBody
+    @PostMapping(value = "/insert")
+    public int insert(@RequestBody Supplier supplier){
+        System.out.println(supplier);
+        return service.insert(supplier);
+    }
+
+    @ResponseBody
+    @GetMapping(value = "/queryUser")
+    public List<User> queryUser(){
+        return userService.queryAll();
+    }
+
+    @ResponseBody
+    @PutMapping(value = "/update")
+    public int update(Supplier supplier){
+        return service.updateById(supplier);
+    }
+
+    @ResponseBody
+    @DeleteMapping(value = "/delete")
+    public int delete(int id){
+        return service.deleteById(id);
     }
 
 }
