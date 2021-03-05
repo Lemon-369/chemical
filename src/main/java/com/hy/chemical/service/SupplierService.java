@@ -19,7 +19,7 @@ public interface SupplierService {
     int insert(Supplier supplier);
 
     //删除
-    int deleteById(int id);
+    Integer deleteById(int id);
 
     //更新
     int updateById(Supplier supplier);

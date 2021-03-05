@@ -71,13 +71,13 @@ public class SupplierController {
 
     @ResponseBody
     @PutMapping(value = "/update")
-    public int update(Supplier supplier){
+    public int update(@RequestBody Supplier supplier){
         return service.updateById(supplier);
     }
 
     @ResponseBody
     @DeleteMapping(value = "/delete")
-    public int delete(int id){
+    public int delete(@RequestParam(value = "gid") Integer id){
         return service.deleteById(id);
     }
 

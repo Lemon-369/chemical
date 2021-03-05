@@ -53,7 +53,7 @@ public class SupplierServiceImpl implements SupplierService{
      * @return
      */
     @Override
-    public int deleteById(int id) {
+    public Integer deleteById(int id) {
         return mapper.deleteById(id);
     }
 
