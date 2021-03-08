@@ -18,7 +18,7 @@ import java.util.List;
  * @date 2021/3/2 11:32
  * 供应商管理
  */
-@Controller()
+@Controller
 @RequestMapping(value = "/supplier")
 public class SupplierController {
     @Autowired
@@ -39,7 +39,7 @@ public class SupplierController {
             SupplierSelectVo selectVo,
             @RequestParam(value = "page",defaultValue = "1") int page,
             @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
-        //调用分页接口
+        //调用分页查询接口
         IPage<Supplier> iPage = service.mySelectPage(page, pageSize, selectVo);
         //封装返回的数据
         SupplierPage supplierPage = new SupplierPage();
@@ -79,6 +79,19 @@ public class SupplierController {
     @DeleteMapping(value = "/delete")
     public int delete(@RequestParam(value = "gid") Integer id){
         return service.deleteById(id);
+    }
+
+    //查询供应商
+    @ResponseBody
+    @GetMapping(value = "/querySupplier")
+    public List<Supplier> querySupplier(){
+        return service.selectList();
+    }
+    //查询供应商
+    @ResponseBody
+    @GetMapping(value = "/queryById")
+    public Supplier selectById(@RequestParam(value = "supplierId") Integer id){
+        return service.selectById(id);
     }
 
 }

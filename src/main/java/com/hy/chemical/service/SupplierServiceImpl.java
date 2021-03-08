@@ -22,9 +22,9 @@ public class SupplierServiceImpl implements SupplierService{
 
     /**
      * 查询所有供应商信息
-     * @param page
-     * @param pageSize
-     * @param selectVo
+     * @param page  第几页
+     * @param pageSize  一页几条
+     * @param selectVo  查询条件
      * @return
      */
     @Override
@@ -35,6 +35,15 @@ public class SupplierServiceImpl implements SupplierService{
         pages.setSearchCount(true);
         return mapper.mySelectPage(pages,selectVo);
 
+    }
+
+    //查询所有
+    public List<Supplier> selectList(){
+        return mapper.selectList(null);
+    }
+    //根据id查询
+    public Supplier selectById(int id){
+        return mapper.selectById(id);
     }
 
     /**
