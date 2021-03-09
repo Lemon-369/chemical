@@ -5,7 +5,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * @author zhang
@@ -16,9 +15,6 @@ public class MyInterceptor implements HandlerInterceptor {
     //在请求处理之前进行调用（Controller方法调用之前）
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession();
-        session.getAttribute("");
-
         return false;
     }
 
