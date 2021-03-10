@@ -14,7 +14,7 @@
         <if test="condition.name!=null and condition.name!=''">
             <bind name="Name" value="'%'+condition.name+'%'"></bind>
         </if>
-      select c.sid,c.name,c.cas,s.name sName,c.price_info,c.update_time,c.supplier_id,c.commodity_info,u.user_name
+      select c.sid,c.name,c.cas,s.name sName,c.price_info,c.create_time,c.update_time,c.supplier_id,c.commodity_info,u.user_name
       from commodity c,supplier s,users u
       <where>
             s.gid = c.supplier_id and c.user_id = u.uid

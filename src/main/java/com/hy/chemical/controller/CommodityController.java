@@ -3,14 +3,11 @@ package com.hy.chemical.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.hy.chemical.pojo.Commodity;
 import com.hy.chemical.pojo.CommodityPage;
-import com.hy.chemical.pojo.Supplier;
 import com.hy.chemical.service.CommodityServiceImpl;
-import com.hy.chemical.service.SupplierServiceImpl;
 import com.hy.chemical.vo.CommoditySelectVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 
 /**
  * @author zhang
@@ -66,6 +63,7 @@ public class CommodityController {
     @ResponseBody
     @PutMapping(value = "/update")
     public int update(@RequestBody Commodity commodity){
+        System.out.println(commodity.getUpdateTime());
         return service.updateById(commodity);
     }
 

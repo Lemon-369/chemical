@@ -9,7 +9,7 @@ spring:
       enabled: true  #设置开启热部署
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/project?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/project?serverTimezone=Asia/Shanghai
     username: root
     password: root
 

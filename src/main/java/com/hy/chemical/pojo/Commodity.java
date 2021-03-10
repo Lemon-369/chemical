@@ -34,10 +34,8 @@ public class Commodity implements Serializable {
     private String fileStatus;     //文件上传状态 ：0未上传   1已上传
     private String filePath;       //文件路径
     private Integer supplierId;    //供应商id
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createTime;   //创建时间
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date updateTime;   //更新时间
     private String sName; //供应商名称
