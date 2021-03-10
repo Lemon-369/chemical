@@ -17,9 +17,4 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true  #解决数据库字段带下划线字段自动转换驼峰命名
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #配置日志输出
-  type-aliases-package: com.hy.chemical.pojo,com.hy.chemical.vo
-
-person:
-  username: 张三
-  age: 18
-  sex: 男
+  type-aliases-package: com.hy.chemical.pojo,com.hy.chemical.vo #配置别名
