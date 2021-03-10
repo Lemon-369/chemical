@@ -29,8 +29,7 @@ public class Supplier implements Serializable {
     private String phone;   //电话
     private String wechat;  //微信或qq
     private String status;  //状态    0未关联商品  1已关联商品
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date createTime;   //创建时间
     private String remark;  //备注
 }
