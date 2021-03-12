@@ -8,6 +8,7 @@ import com.hy.chemical.pojo.User;
 import com.hy.chemical.vo.SupplierSelectVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * @author zhang
  * @date 2021/3/2 11:12
  */
-@Mapper
+@Repository
 public interface SupplierMapper extends BaseMapper<Supplier>{
     IPage<Supplier> mySelectPage(Page<Supplier> page, @Param("condition")SupplierSelectVo selectVo);
 }
