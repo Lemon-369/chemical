@@ -14,7 +14,7 @@ public class ChemicalApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ChemicalApplication.class, args);
-        System.out.println("Hello Spring-Boot ");
+        System.out.println("Hello Spring-Boot !");
     }
 
 }
