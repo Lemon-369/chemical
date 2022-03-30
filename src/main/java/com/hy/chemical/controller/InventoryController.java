@@ -29,10 +29,14 @@ public class InventoryController {
         InventoryPage inventoryPage = new InventoryPage();
         //封装数据
         inventoryPage.setData(iPage.getRecords());
-        inventoryPage.setTotal(iPage.getTotal());   //总记录数
-        inventoryPage.setPages(iPage.getPages());   //总页数
-        inventoryPage.setPageSizes(iPage.getSize());    //页显示条目个数
-        inventoryPage.setCurrent(iPage.getCurrent());   //当前页码
+        //总记录数
+        inventoryPage.setTotal(iPage.getTotal());
+        //总页数
+        inventoryPage.setPages(iPage.getPages());
+        //页显示条目个数
+        inventoryPage.setPageSizes(iPage.getSize());
+        //当前页码
+        inventoryPage.setCurrent(iPage.getCurrent());
         return inventoryPage;
     }
 
