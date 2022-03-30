@@ -81,13 +81,17 @@ public class SupplierController {
         return service.deleteById(id);
     }
 
-    //查询供应商
+    /**
+     * 查询供应商
+     */
     @ResponseBody
     @GetMapping(value = "/querySupplier")
     public List<Supplier> querySupplier(){
         return service.selectList();
     }
-    //查询供应商
+    /**
+     * 查询供应商
+     */
     @ResponseBody
     @GetMapping(value = "/queryById")
     public Supplier selectById(@RequestParam(value = "supplierId") Integer id){
